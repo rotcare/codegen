@@ -32,6 +32,10 @@ export interface ModelMethodParameter {
 // codegen((order: Model<Order>) => { return 'xxx'; })
 // 或者对所有的 Model 产生了依赖
 // codegen((...models: Model[]) => { return 'xxx'; })
-export function codegen<T>(gen: (...models: Model[]) => string, ...uses: any[]): T {
+export function codegen<T>(gen: (...models: Model[]) => T): T {
     throw new Error('code has not been generated yet');
+}
+
+export function use<T>(imported: Promise<T>): T {
+    return imported as any;
 }

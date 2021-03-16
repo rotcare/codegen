@@ -5,14 +5,16 @@ export interface Model<T = any> {
     qualifiedName: string;
     archetype: Archetype;
     properties: ModelProperty[];
+    staticProperties: ModelProperty[];
     methods: ModelMethod[];
+    staticMethods: ModelMethod[];
 }
 
 export type Archetype = 'Gateway' | 'ActiveRecord' | 'Widget' | 'Command';
 
 export interface ModelProperty {
     name: string;
-    type: string;
+    type?: string;
     readonly: boolean;
     defaultValue?: string;
 }
@@ -20,7 +22,7 @@ export interface ModelProperty {
 export interface ModelMethod {
     name: string;
     paramters: ModelMethodParameter[];
-    returnType: string;
+    returnType?: string;
 }
 
 export interface ModelMethodParameter {

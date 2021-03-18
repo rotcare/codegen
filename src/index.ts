@@ -2,15 +2,19 @@
 // 没有直接使用 babel 的 AST 数据结构，是为了方便用户独立构造
 // 在提供最终用户编程性的时候，Model 不是来自于 TypeScript 定义，而是由用户通过表单在运行时定义的
 export interface Model<T = any> {
+    // 路径 + 类名，用 path.basename 取得类名部分
     qualifiedName: string;
-    archetype: Archetype;
+    // 基类的名字
+    archetype?: string;
+    // p: string;
     properties: ModelProperty[];
+    // static p: string;
     staticProperties: ModelProperty[];
+    // m(): string {}
     methods: ModelMethod[];
+    // static m(): string {}
     staticMethods: ModelMethod[];
 }
-
-export type Archetype = 'Gateway' | 'ActiveRecord' | 'Widget' | 'Command';
 
 export interface ModelProperty {
     name: string;

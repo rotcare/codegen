@@ -4,8 +4,12 @@
 export interface Model<T = any> {
     // 路径 + 类名，用 path.basename 取得类名部分
     qualifiedName: string;
+    // 如果定义了 class，则是有值，否则为空
+    tableName?: string;
     // 基类的名字
     archetype?: string;
+    // class 上的 decorator
+    decorators: Record<string, any>;
     // p: string;
     properties: ModelProperty[];
     // static p: string;
@@ -17,6 +21,7 @@ export interface Model<T = any> {
 }
 
 export interface ModelProperty {
+    decorators: Record<string, any>;
     name: string;
     type?: string;
     readonly: boolean;
@@ -24,6 +29,7 @@ export interface ModelProperty {
 }
 
 export interface ModelMethod {
+    decorators: Record<string, any>;
     name: string;
     paramters: ModelMethodParameter[];
     returnType?: string;

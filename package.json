@@ -1,16 +1,17 @@
 {
-    "name": "@rotcare/codegen",
-    "version": "0.1.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rotcare/codegen.git"
-    },
-    "homepage": "https://rot.care/codegen/",
-    "main": "src/index.ts",
-    "devDependencies": {
-        "typedoc": "^0.20.33"
-    },
-    "scripts": {
-        "release": "tsc && typedoc src/index.ts"
-    }
+  "name": "@rotcare/codegen",
+  "version": "0.1.10",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rotcare/codegen.git"
+  },
+  "homepage": "https://rot.care/codegen/",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "typedoc": "^0.20.33"
+  },
+  "scripts": {
+    "release": "tsc && typedoc src/index.ts"
+  },
+  "typings": "lib/index.d.ts"
 }

@@ -1,3 +1,34 @@
-# codegen
+# TypeScript 编译期代码生成
 
-把占位符替换为编译期的类型信息，或者根据类型信息生成的代码。使用了 `@rotcare/codegen` 的 TypeScript 项目，需要使用 `@rotcare/project` 的工具链转义为 JavaScript，而不能使用 ts-eager 等普通的转译工具。否则 codegen 的占位符不会被替换。
+```ts
+import { codegen, Model } from '@rotcare/codegen';
+import { Product } from './Product';
+import { generateForm } from 'some-generator';
+
+const someVar = codegen((product: Model<Product>) => {
+    return generateForm(product);
+})
+```
+
+在编译的时候，codegen 中的回调会被执行。假设 generateForm 返回了 "Hello" 字符串。那么这里就变成了
+
+```ts
+const someVar = "Hello"; // 有 generateForm 生成的代码
+```
+
+`codegen()` 类似 C/C++ 的宏，会在编译期被执行，并替换源代码。
+
+编译需要选择对应的编译工具链
+
+* [@rotcare/project](https://github.com/rotcare/project)
+* [@rotcare/project-esbuild](https://github.com/rotcare/project-esbuild)
+* [@rotcare/register](https://github.com/rotcare/register)
+
+# API
+
+```
+yarn add @rotcare/codegen
+```
+
+* [codegen](./src/index.ts)
+* [Model](./src/index.ts)

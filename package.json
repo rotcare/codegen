@@ -6,7 +6,10 @@
         "url": "https://github.com/rotcare/codegen.git"
     },
     "main": "src/index.ts",
+    "devDependencies": {
+        "typedoc": "^0.20.33"
+    },
     "scripts": {
-        "release": "tsc"
+        "release": "tsc && typedoc src/index.ts"
     }
 }

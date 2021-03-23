@@ -5,6 +5,7 @@
         "type": "git",
         "url": "https://github.com/rotcare/codegen.git"
     },
+    "homepage": "https://rot.care/codegen/",
     "main": "src/index.ts",
     "devDependencies": {
         "typedoc": "^0.20.33"

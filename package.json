@@ -1,12 +1,13 @@
 {
-    "name": "@rotcare/codegen",
-    "version": "0.1.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rotcare/codegen.git"
-    },
-    "main": "src/index.ts",
-    "scripts": {
-        "release": "tsc"
-    }
+  "name": "@rotcare/codegen",
+  "version": "0.1.7",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rotcare/codegen.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "release": "tsc"
+  },
+  "typings": "lib/index.d.ts"
 }
